@@ -1,27 +1,36 @@
 package com.bigodesepatinhas.backend.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "Tutor")
+@Table(name = "\"Tutor\"")
 public class Tutor {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_Tutor")
+    @Column(name = "\"id_Tutor\"")
+    @JsonProperty("idTutor")
     private Long idTutor;
 
-    @Column(name = "nome_Tutor", nullable = false)
+    @Column(name = "\"nome_Tutor\"")
+    @JsonProperty("nomeTutor")
     private String nomeTutor;
 
-    @Column(name = "cpf", nullable = false, unique = true)
+    @Column(name = "\"CPF\"")
+    @JsonProperty("cpf")
     private String cpf;
 
-    @Column(name = "telefone")
-    private String telefone;
+    @Column(name = "\"telefone_Tutor\"")
+    @JsonProperty("telefone")
+    private String telefoneTutor;
 
-    @Column(name = "email")
-    private String email;
+    @Column(name = "\"email_Tutor\"")
+    @JsonProperty("email")
+    private String emailTutor;
+
+    @Column(name = "\"id_Endereco\"")
+    private Integer idEndereco;
 
     public Tutor() {}
 
@@ -34,9 +43,12 @@ public class Tutor {
     public String getCpf() { return cpf; }
     public void setCpf(String cpf) { this.cpf = cpf; }
 
-    public String getTelefone() { return telefone; }
-    public void setTelefone(String telefone) { this.telefone = telefone; }
+    public String getTelefoneTutor() { return telefoneTutor; }
+    public void setTelefoneTutor(String telefoneTutor) { this.telefoneTutor = telefoneTutor; }
 
-    public String getEmail() { return email; }
-    public void setEmail(String email) { this.email = email; }
+    public String getEmailTutor() { return emailTutor; }
+    public void setEmailTutor(String emailTutor) { this.emailTutor = emailTutor; }
+
+    public Integer getIdEndereco() { return idEndereco; }
+    public void setIdEndereco(Integer idEndereco) { this.idEndereco = idEndereco; }
 }
